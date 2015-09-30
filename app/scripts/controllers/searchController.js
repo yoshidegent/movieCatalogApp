@@ -1,8 +1,10 @@
+'use strict';
+
 (function(){
-    angular.module('movieCatalogApp.controllers', [])
+    angular.module('movieCatalogApp.controllers')
         .controller('searchController', SearchController);
 
-    function SearchController($scope)
+    function SearchController($scope, $http)
     {
         $scope.searchBox = '';
         $scope.movies = [];
