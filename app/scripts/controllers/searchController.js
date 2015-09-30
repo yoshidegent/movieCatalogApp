@@ -4,9 +4,15 @@
 
     function SearchController($scope)
     {
+        $scope.searchBox = '';
+        $scope.movies = [];
+
         $scope.searchMovies = function(searchBox)
         {
-            $scope.movies = $http.get('https://angularbackend.azurewebsites.net/swagger/ui/index#!/Movies/Movies_GetSearchMovie/api/Movies/search', searchBox);
+            $http.get('https://angularbackend.azurewebsites.net/swagger/ui/index#!/Movies/Movies_GetSearchMovie/api/Movies/search', searchBox)
+                .success(function(response){
+                    $scope.movies = response;
+                });
         }
     }
 })();

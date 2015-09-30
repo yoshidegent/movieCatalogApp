@@ -8,7 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -18,24 +18,35 @@
 
 <div class="container">
     <p>{{1+1}}</p>
+
     <div ng-controller="searchController">
-        <form class="form" ng-submit="searchMovies(searchBox)">
+        <form class="form" ng-submit="searchMovies()">
             <input class="form-control" type="text" name="searchBox" ng-model="searchBox"/>
             <button class="btn btn-block">Search</button>
         </form>
-        <table class="table">
-            <thead>
-
-            </thead>
-            <tbody>
+        <div ng-show="movies.length > 0">
+            <h3>Movies</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Poster</th>
+                        <th>releaseDate</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr ng-repeat="movie in movies">
                     <td>{{movie.id}}</td>
                     <td>{{movie.title}}></td>
                     <td>{{movie.posterPath}}></td>
                     <td>{{movie.releaseDate}}</td>
                 </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+
+        </div>
+
     </div>
 
 </div>
