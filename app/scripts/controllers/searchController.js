@@ -4,14 +4,14 @@
     angular.module('movieCatalogApp.controllers')
         .controller('searchController', SearchController);
 
-    function SearchController($scope, $http)
+    function SearchController($scope, $http, apiUrl)
     {
-        $scope.searchBox = '';
+        const searchUrlAddition = '/api/Movies/search?title=';
         $scope.movies = [];
 
-        $scope.searchMovies = function(searchBox)
+        $scope.searchMovies = function()
         {
-            $http.get('https://angularbackend.azurewebsites.net/swagger/ui/index#!/Movies/Movies_GetSearchMovie/api/Movies/search', searchBox)
+            $http.get(apiUrl + searchUrlAddition + $scope.searchBox)
                 .success(function(response){
                     $scope.movies = response;
                 });

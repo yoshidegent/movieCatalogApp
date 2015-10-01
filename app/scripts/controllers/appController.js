@@ -1,12 +1,12 @@
 'use strict';
 
-(function(){
-    angular.module('movieCatalogApp.controllers', [])
-        .controller('appController', AppController);
+(function () {
+    var app = angular.module('movieCatalogApp.controllers', ['movieCatalogApp.config']);
 
-    function AppController($scope)
-    {
+    app.controller('appController', AppController);
 
+    function AppController($scope, appTitle) {
+        $scope.title = appTitle;
     }
 
 })();
