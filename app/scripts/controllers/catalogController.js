@@ -6,7 +6,13 @@
 
     function CatalogController($scope, $http, apiUrl)
     {
+        const catalogMoviesUrlAddition = '/api/Movies';
 
-        $scope.movies = [];
+        $scope.catalogmovies = [];
+
+        $http.get(apiUrl + catalogMoviesUrlAddition)
+            .success(function(response){
+                $scope.catalogmovies = response;
+            });
     }
 })();

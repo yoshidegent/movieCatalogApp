@@ -20,7 +20,7 @@
                 <td>{{movie.title}}</td>
                 <td><img ng-src="{{movie.posterPath}}"></td>
                 <td>{{movie.releaseDate}}</td>
-                <td><button>ADD TO CATALOG</button></td>
+                <td><button ng-click="addMovieToCatalog(movie.id)">ADD TO CATALOG</button></td>
             </tr>
             </tbody>
         </table>
