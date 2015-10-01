@@ -1,0 +1,19 @@
+<div ng-controller="catalogController">
+    <h2>Movie Catalog</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Overview</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="catalogMovie in catalogmovies">
+            <td>{{catalogMovie.title}}</td>
+            <td>{{catalogMovie.overview}}</td>
+            <td><img ng-src="{{catalogMovie.detailsImage}}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,12 +1,12 @@
 'use strict';
 
 (function () {
-    var app = angular.module('movieCatalogApp.controllers', ['movieCatalogApp.config']);
+    var app = angular.module('movieCatalogApp.controllers', ['movieCatalogApp.config', 'ngRoute']);
 
     app.controller('appController', AppController);
 
     function AppController($scope, appTitle) {
-        $scope.title = appTitle;
+        this.title = appTitle;
     }
 
 })();

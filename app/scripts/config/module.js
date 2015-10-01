@@ -1,3 +1,5 @@
+'use strict';
+
 (function(){
     angular.module('movieCatalogApp.config', [])
         .constant('apiUrl', 'https://angularbackend.azurewebsites.net:443')

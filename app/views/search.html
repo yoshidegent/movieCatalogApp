@@ -1,0 +1,30 @@
+<div ng-controller="searchController">
+    <form class="form" ng-submit="searchMovies()">
+        <input class="form-control" type="text" name="searchBox" ng-model="searchBox"/>
+        <button class="btn btn-block">Search</button>
+    </form>
+    <div ng-show="movies.length > 0">
+        <h3>Movies</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Poster</th>
+                <th>releaseDate</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="movie in movies">
+                <td>{{movie.id}}</td>
+                <td>{{movie.title}}</td>
+                <td><img ng-src="{{movie.posterPath}}"></td>
+                <td>{{movie.releaseDate}}</td>
+                <td><button>ADD TO CATALOG</button></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
